@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +32,7 @@ public class BookController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(savedbook);
 	}
 	
-	@PostMapping("/book/delete-book")
+	@DeleteMapping("/book/delete-book")
 	private  ResponseEntity<List<Book>> deleteBookById(@RequestParam int bookId) {
 		List<Book> booklist = service.deleteBookById(bookId);
 		return ResponseEntity.status(HttpStatus.OK).body(booklist);
@@ -59,7 +61,7 @@ public class BookController {
 		return ResponseEntity.status(HttpStatus.OK).body(booklist);
 	}
 	
-	@PatchMapping("/book/edit-book")
+	@PutMapping("/book/edit-book")
 	private   ResponseEntity<Book> editBook(@RequestBody Book book) {
 		Book updatedBook = service.updateBook(book);
 		return ResponseEntity.status(HttpStatus.OK).body(updatedBook);

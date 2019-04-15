@@ -1,0 +1,80 @@
+#run the application and use the swagger UI
+http://localhost:8080/swagger-ui.html#/
+
+
+http://localhost:8080/book/save-allbook
+save All Json 
+[
+  {
+    "book_id": 1,
+    "book_name": "Welcome",
+    "book_aurthor": "Eshan",
+    "book_isbn": "123favc",
+    "published_year": "2019",
+    "book_edition": "2nd"
+  },
+  {
+    "book_id": 2,
+    "book_name": "Welcome to jungle",
+    "book_aurthor": "Ravindra",
+    "book_isbn": "123favc",
+    "published_year": "2019",
+    "book_edition": "2nd"
+  },
+  {
+    "book_id": 3,
+    "book_name": "Highway to hell",
+    "book_aurthor": "Ravindra",
+    "book_isbn": "123favcbin",
+    "published_year": "2019",
+    "book_edition": "2nd"
+  },
+  {
+    "book_id": 4,
+    "book_name": "Highway to heaven",
+    "book_aurthor": "Ravindra Dhakal",
+    "book_isbn": "123favchev",
+    "published_year": "2019",
+    "book_edition": "2nd"
+  }
+]
+get-allbook
+http://localhost:8080/book/get-allbook
+
+find-bookby-title
+http://localhost:8080/book/find-bookby-title?title=welcome
+
+find-book-aurthor
+http://localhost:8080/book/find-book-aurthor?aurthor=eshan
+
+
+editBook
+http://localhost:8080/book/edit-book
+{
+    "book_id": 4,
+    "book_name": "Highway to heaven",
+    "book_aurthor": "Ravindra Dhakal",
+    "book_isbn": "123favchev",
+    "published_year": "2019",
+    "book_edition": "2nd"
+}
+
+DeleteBook
+http://localhost:8080/book/delete-book?bookId=2
+
+
+Add Single Book
+http://localhost:8080/book/add-book
+{
+    "book_id": 5,
+    "book_name": "Highway to heaven",
+    "book_aurthor": "Ravindra Dhakal",
+    "book_isbn": "3456welcome",
+    "published_year": "2019",
+    "book_edition": "2nd"
+  }
+
+getBookById
+http://localhost:8080/book/1/get-bookby-id
+
+
